@@ -7,7 +7,7 @@ app = Flask(__name__)
  
 @app.route("/")
 def home():
-    return render_template('index.html', subject="안녕하세요. 반갑습니다. OOO입니다")
+    return render_template('index.html', subject="안녕하세요. 반갑습니다. 저는 함지민입니다")
  
 #1-1
 @app.route('/<user>')
@@ -17,13 +17,17 @@ def hello(user):
 #2
 @app.route("/about")
 def about():
-    return render_template('busan1.html', subject="부산중위연령시각화")
+    return render_template('busan.html', subject="부산 가로등 수 시각화")
  
 #3
 @app.route("/show1")
 def show1():
     return render_template('img_test1.html', image_file='img/1.jpg')
- 
+    
+#3
+@app.route("/show2")
+def show2(): 
+    return render_template('img_test2.html', image_file='img/2.jpg')
 #4
 # 기상청 날씨
 @app.route("/kma")
@@ -82,4 +86,4 @@ def kma1():
  
   return output
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port='5000', debug=True)
+    app.run(host='127.0.0.1', port='5000', debug=True)  
